@@ -20,7 +20,7 @@ defmodule EventsAppWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-   scope "/api/ve", EventsAppWeb do
+   scope "/api/v1", EventsAppWeb do
      pipe_through :api
 
      resources "/users", UserController, except: [:new, :edit]
