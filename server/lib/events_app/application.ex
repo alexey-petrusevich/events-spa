@@ -1,4 +1,4 @@
-defmodule Events.Application do
+defmodule EventsApp.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,27 +8,27 @@ defmodule Events.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Events.Repo,
+      EventsApp.Repo,
       # Start the Telemetry supervisor
-      EventsWeb.Telemetry,
+      EventsAppWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Events.PubSub},
+      {Phoenix.PubSub, name: EventsApp.PubSub},
       # Start the Endpoint (http/https)
-      EventsWeb.Endpoint
-      # Start a worker by calling: Events.Worker.start_link(arg)
-      # {Events.Worker, arg}
+      EventsAppWeb.Endpoint
+      # Start a worker by calling: EventsApp.Worker.start_link(arg)
+      # {EventsApp.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Events.Supervisor]
+    opts = [strategy: :one_for_one, name: EventsApp.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    EventsWeb.Endpoint.config_change(changed, removed)
+    EventsAppWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

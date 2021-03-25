@@ -7,16 +7,16 @@
 # General application configuration
 use Mix.Config
 
-config :events,
-  ecto_repos: [Events.Repo]
+config :events_app,
+  ecto_repos: [EventsApp.Repo]
 
 # Configures the endpoint
-config :events, EventsWeb.Endpoint,
+config :events_app, EventsAppWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "ONYEhKAFb253zbt7Zts+QmtLRw3yHEbOSYu3mpq0RC7tzbuuyZyEGlTP9jow85dH",
-  render_errors: [view: EventsWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Events.PubSub,
-  live_view: [signing_salt: "OJDZ3+jj"]
+  secret_key_base: "YB2dCMoIQlSOlj5j9QI2bTERG6VNh2hpsrLBlkgKkz34EmsM6jdZIqBXVs5GqHdH",
+  render_errors: [view: EventsAppWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: EventsApp.PubSub,
+  live_view: [signing_salt: "JoYBIk4j"]
 
 # Configures Elixir's Logger
 config :logger, :console,

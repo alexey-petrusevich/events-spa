@@ -1,4 +1,4 @@
-# Events
+# EventsApp
 
 To start your Phoenix server:
 

@@ -1,9 +1,9 @@
-defmodule Events.MixProject do
+defmodule EventsApp.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :events,
+      app: :events_app,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule Events.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Events.Application, []},
+      mod: {EventsApp.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

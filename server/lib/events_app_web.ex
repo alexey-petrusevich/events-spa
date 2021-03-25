@@ -1,12 +1,12 @@
-defmodule EventsWeb do
+defmodule EventsAppWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use EventsWeb, :controller
-      use EventsWeb, :view
+      use EventsAppWeb, :controller
+      use EventsAppWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule EventsWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: EventsWeb
+      use Phoenix.Controller, namespace: EventsAppWeb
 
       import Plug.Conn
-      import EventsWeb.Gettext
-      alias EventsWeb.Router.Helpers, as: Routes
+      import EventsAppWeb.Gettext
+      alias EventsAppWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/events_web/templates",
-        namespace: EventsWeb
+        root: "lib/events_app_web/templates",
+        namespace: EventsAppWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule EventsWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import EventsWeb.Gettext
+      import EventsAppWeb.Gettext
     end
   end
 
@@ -66,9 +66,9 @@ defmodule EventsWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import EventsWeb.ErrorHelpers
-      import EventsWeb.Gettext
-      alias EventsWeb.Router.Helpers, as: Routes
+      import EventsAppWeb.ErrorHelpers
+      import EventsAppWeb.Gettext
+      alias EventsAppWeb.Router.Helpers, as: Routes
     end
   end
 

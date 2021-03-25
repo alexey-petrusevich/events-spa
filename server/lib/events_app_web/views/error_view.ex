@@ -1,5 +1,5 @@
-defmodule EventsWeb.ErrorView do
-  use EventsWeb, :view
+defmodule EventsAppWeb.ErrorView do
+  use EventsAppWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

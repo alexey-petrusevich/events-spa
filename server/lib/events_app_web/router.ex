@@ -1,5 +1,5 @@
-defmodule EventsWeb.Router do
-  use EventsWeb, :router
+defmodule EventsAppWeb.Router do
+  use EventsAppWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule EventsWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", EventsWeb do
+  scope "/", EventsAppWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", EventsWeb do
+  # scope "/api", EventsAppWeb do
   #   pipe_through :api
   # end
 
@@ -36,7 +36,7 @@ defmodule EventsWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: EventsWeb.Telemetry
+      live_dashboard "/dashboard", metrics: EventsAppWeb.Telemetry
     end
   end
 end
