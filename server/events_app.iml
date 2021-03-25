@@ -82,5 +82,6 @@
     <orderEntry type="library" name="x509" level="project" />
     <orderEntry type="library" name="mime" level="project" />
     <orderEntry type="library" name="html_entities" level="project" />
+    <orderEntry type="library" name="cors_plug" level="project" />
   </component>
 </module>
