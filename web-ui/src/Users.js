@@ -1,6 +1,6 @@
-import {useState} from "react";
 import {Row, Col, Form, Button} from "react-bootstrap";
 import capitalize from "lodash/capitalize";
+import {connect} from "react-redux";
 
 
 function Field({user, setUser, field}) {
@@ -35,8 +35,10 @@ function UserForm({user, setUser}) {
     );
 }
 
-export default function Users({users}) {
-    let [user, setUser] = useState({});
+function Users({users, user_form, dispatch}) {
+    function setUser(user) {
+        dispatch({type: "user_form/set", data: user});
+    }
 
     let rows = users.map((user) => (
         <tr key={user.id}>
@@ -77,11 +79,11 @@ export default function Users({users}) {
             <Row>
                 <Col>
                     <h2>Edit User</h2>
-                    <UserForm user={user} setUser={setUser}/>
+                    <UserForm user={user_form} setUser={setUser}/>
                 </Col>
             </Row>
         </div>
     );
 }
 
-
+export default connect(({users, user_form}) => ({users, user_form}))(Users);
