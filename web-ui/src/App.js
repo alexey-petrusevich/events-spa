@@ -1,5 +1,7 @@
-import './App.css';
+import './App.scss';
 import {useState, useEffect} from 'react';
+import Users from "./Users";
+import {Container} from "react-bootstrap";
 
 async function fetchUsers() {
     // send GET request to /users and wait for response
@@ -20,11 +22,9 @@ function App() {
     }, [users]);
 
     return (
-        <div>
-            <ul>
-                {users.map((uu) => (<li key={uu.id}>{uu.name}</li>))}
-            </ul>
-        </div>
+        <Container>
+            <Users users={users}/>
+        </Container>
     );
 }
 
