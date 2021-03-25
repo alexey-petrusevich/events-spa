@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 
 async function fetchUsers() {
     // send GET request to /users and wait for response
-    let text = await fetch("http://localhost:400/api/v1/users", {});
+    let text = await fetch("http://localhost:4000/api/v1/users", {});
     // convert to json
     let resp = await text.json();
     // return only data component
