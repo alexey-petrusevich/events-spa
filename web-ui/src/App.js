@@ -6,6 +6,7 @@ import Feed from "./Feed";
 import UsersList from "./Users/List";
 import UsersNew from "./Users/New";
 import EventNew from "./Events/New";
+import ShowEvent from "./Events/Show"
 
 function App() {
     return (
@@ -23,6 +24,9 @@ function App() {
                 </Route>
                 <Route path="/events/new" exact>
                     <EventNew/>
+                </Route>
+                <Route path="/events">
+                    <ShowEvent/>
                 </Route>
             </Switch>
         </Container>
