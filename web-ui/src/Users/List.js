@@ -1,6 +1,6 @@
 import {Row, Col, Form, Button} from "react-bootstrap";
-import capitalize from "lodash/capitalize";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 
 function UsersList({users}) {

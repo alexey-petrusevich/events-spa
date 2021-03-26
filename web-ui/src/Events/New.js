@@ -1,6 +1,5 @@
 import {Row, Col, Form, Button} from "react-bootstrap";
 import {useState} from "react";
-import DateTimePicker from "react-datetime-picker/src/DateTimePicker";
 import {create_event} from "../api";
 
 export default function EventsNew() {
@@ -50,8 +49,9 @@ export default function EventsNew() {
                   </Form.Group>
                   <Form.Group>
                       <Form.Label>Date & Time</Form.Label>
-                      <DateTimePicker onChange={updateDateTime}
-                                      value={event.date} />
+                      <Form.Control as="time"
+                                    onChange={updateDateTime}
+                                    value={event.date} />
                   </Form.Group>
                   <Form.Group>
                       <Form.Label>Description</Form.Label>

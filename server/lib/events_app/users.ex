@@ -113,7 +113,7 @@ defmodule EventsApp.Users do
     # compare hashes stored and given password
     case Argon2.check_pass(user, pass) do
       {:ok, user} -> user
-      _ -> nul
+      _ -> nil
     end
   end
 end
