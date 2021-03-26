@@ -5,18 +5,22 @@ Answer the following questions:
 
 
 1. What's your name?
+
 Alexey Petrusevich
 
 
 2. What's the URL of the github repo with your work for this HW?
+
 https://github.com/alexey-petrusevich/events-spa
 
 
 3. What's the URL that you deployed to?
+
 http://events-spa.quickjohnny.art/
 
 
 4. Is your app functionality complete? If not, what's missing?
+
 Most of things are missing due to time constraints. Specifically, I got stuck with CORS for quite sometime.
 While I've created all necessary resources and followed professor's lecture notes,
 the only functionality working here is creating new users, and new events (sort of).
@@ -28,6 +32,7 @@ Other functionality requested is missing.
 
 
 5. Is your app properly deployed? If not, what went wrong?
+
 Yes
 
 
