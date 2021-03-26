@@ -29,6 +29,7 @@ defmodule EventsAppWeb.Router do
      resources "/comments", CommentController, except: [:new, :edit]
      resources "/responses", ResponseController, except: [:new, :edit]
      resources "/updates", UpdateController, except: [:new, :edit]
+     resources "/session", SessionController, only: [:create]
    end
 
   # Enables LiveDashboard only for development

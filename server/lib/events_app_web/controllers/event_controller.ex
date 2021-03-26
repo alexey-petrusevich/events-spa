@@ -11,13 +11,21 @@ defmodule EventsAppWeb.EventController do
     render(conn, "index.json", events: events)
   end
 
-  def create(conn, %{"event" => event_params}) do
-    with {:ok, %Event{} = event} <- Events.create_event(event_params) do
-      conn
-      |> put_status(:created)
-      |> put_resp_header("location", Routes.event_path(conn, :show, event))
-      |> render("show.json", event: event)
-    end
+  def create(conn, %{"name" => name, "password" => password}) do
+
+    user = EventsApp.Users.get_user_by_name!(name)
+
+    # TODO: verify password
+
+    sess = %{
+      user_id: user.id,
+      name: user.name,
+      token: Phoenix.Token.sign(conn, "user_id", user.id),
+    }
+    conn
+    |> put_resp_header("content-type", "application/json; charset=UTF-8")
+    |> send_resp(:created, Jason.encode!(sess));
+
   end
 
   def show(conn, %{"id" => id}) do
