@@ -1,15 +1,24 @@
 import {Row, Col, Form, Button} from "react-bootstrap";
 import {useState} from "react";
-import {create_event} from "../api";
+import {create_event, fetch_events} from "../api";
+import {useHistory} from "react-router-dom";
 
 export default function EventsNew() {
+    let history = useHistory();
     let [event, setEvent] = useState({});
 
     function onSubmit(ev) {
         ev.preventDefault();
         console.log(ev);
         console.log(event);
-        create_event(event)
+        create_event(event).then((resp) => {
+            if (resp["errors"]) {
+                console.log("errors", resp.errors);
+            } else {
+                history.push("/");
+                fetch_events()
+            }
+        });
     }
 
     function updateDescription(ev) {

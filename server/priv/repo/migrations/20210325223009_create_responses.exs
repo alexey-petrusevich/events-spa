@@ -4,8 +4,8 @@ defmodule EventsApp.Repo.Migrations.CreateResponses do
   def change do
     create table(:responses) do
       add :response, :integer, null: false
-      add :user_id, references(:users, on_delete: :nothing)
-      add :event_id, references(:events, on_delete: :nothing)
+      add :user_id, references(:users, on_delete: :nothing), null: false
+      add :event_id, references(:events, on_delete: :nothing), null: false
 
       timestamps()
     end

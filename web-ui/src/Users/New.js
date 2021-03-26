@@ -3,14 +3,26 @@ import {connect} from "react-redux";
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
 import pick from "lodash/pick";
+
 import {create_user, fetch_users} from "../api";
 
 
 function UsersNew() {
     console.log("in users new");
-
     let history = useHistory();
     const [user, setUser] = useState({name: "", email: "", pass1: "", pass2: ""});
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+        console.log(ev);
+        console.log(user);
+
+        let data = pick(user, ["name", "email", "password"]);
+        create_user(data).then(() => {
+            fetch_users();
+            history.push("/users");
+        });
+    }
 
     function check_pass(p1, p2) {
         if (p1 !== p2) {
@@ -24,24 +36,12 @@ function UsersNew() {
         return "";
     }
 
-
     function update(field, ev) {
         let u1 = Object.assign({}, user);
         u1[field] = ev.target.value;
         u1.password = u1.pass1;
         u1.pass_msg = check_pass(u1.pass1, u1.pass2);
         setUser(u1);
-    }
-
-    function onSubmit(ev) {
-        ev.preventDefault();
-        console.log(user);
-
-        let data = pick(user, ["name", "email", "password"]);
-        create_user(data).then(() => {
-            fetch_users();
-            history.push("/users");
-        });
     }
 
     return (

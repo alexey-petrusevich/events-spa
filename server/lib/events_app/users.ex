@@ -35,7 +35,14 @@ defmodule EventsApp.Users do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id) do
+    IO.inspect("getting user with id = ")
+    IO.inspect(id)
+    user = Repo.get!(User, id)
+    IO.inspect("found user")
+    IO.inspect(user)
+    user
+  end
 
   @doc """
   Creates a user.
