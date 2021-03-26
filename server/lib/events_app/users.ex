@@ -112,8 +112,8 @@ defmodule EventsApp.Users do
   end
 
 
-  def authenticate(name, pass) do
-    user = get_user_by_name!(name);
+  def authenticate(name, pass, email) do
+    user = get_user_by_name_email!(name, email);
     case Argon2.check_pass(user, pass) do
       {:ok, user} -> user
       _ -> nil

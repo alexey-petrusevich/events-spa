@@ -1,8 +1,8 @@
 defmodule EventsAppWeb.SessionController do
   use EventsAppWeb, :controller
 
-  def create(conn, %{"name" => name, "password" => password}) do
-    user = EventsApp.Users.authenticate(name, password)
+  def create(conn, %{"name" => name, "password" => password, "email" => email}) do
+    user = EventsApp.Users.authenticate(name, password, email)
 
     if user do
       IO.inspect("user not nil")

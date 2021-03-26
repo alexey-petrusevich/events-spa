@@ -7,18 +7,26 @@ import {api_login} from "./api";
 function LoginForm() {
     const [name, setName] = useState("");
     const [pass, setPass] = useState("");
+    const [email, setEmail] = useState("");
 
     function onSubmit(ev) {
         ev.preventDefault();
-        api_login(name, pass);
+        api_login(name, pass, email);
     }
 
     return (
         <Form onSubmit={onSubmit} inline>
+            <Form.Label>Name</Form.Label>
             <Form.Control name="name"
                           type="text"
                           onChange={(ev) => setName(ev.target.value)}
                           value={name}/>
+            <Form.Label>Email</Form.Label>
+            <Form.Control name="email"
+                          type="text"
+                          onChange={(ev) => setEmail(ev.target.value)}
+                          value={email}/>
+            <Form.Label>Password</Form.Label>
             <Form.Control name="password"
                           type="password"
                           onChange={(ev) => setPass(ev.target.value)}

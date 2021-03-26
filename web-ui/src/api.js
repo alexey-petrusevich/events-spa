@@ -1,7 +1,7 @@
 import store from "./store"
 
-export function api_login(name, password) {
-    api_post("/session", {name, password}).then((data) => {
+export function api_login(name, password, email) {
+    api_post("/session", {name, password, email}).then((data) => {
         console.log("login resp", data);
 
         if (data.session) {
