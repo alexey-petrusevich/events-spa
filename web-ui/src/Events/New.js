@@ -45,7 +45,7 @@ export default function EventsNew() {
                       <Form.Label>Name</Form.Label>
                       <Form.Control type="text"
                                     onChange={updateName}
-                                    value={event.description} />
+                                    value={event.name} />
                   </Form.Group>
                   <Form.Group>
                       <Form.Label>Date & Time</Form.Label>

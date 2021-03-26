@@ -41,4 +41,4 @@ function Feed({events, session}) {
     );
 }
 
-export default connect(({events}) => ({events}))(Feed);
+export default connect(({events, session}) => ({events, session}))(Feed);
