@@ -8,7 +8,8 @@
 use Mix.Config
 
 config :events_app,
-  ecto_repos: [EventsApp.Repo]
+  ecto_repos: [EventsApp.Repo],
+  mix_env: "#{Mix.env()}"
 
 # Configures the endpoint
 config :events_app, EventsAppWeb.Endpoint,
