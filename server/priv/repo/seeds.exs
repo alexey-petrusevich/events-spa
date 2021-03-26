@@ -12,13 +12,28 @@
 
 alias EventsApp.Repo
 alias EventsApp.Users.User
+alias EventsApp.Events.Event
 
-Repo.insert!(%User{name: "alice", email: "alice@alice", password_hash: ""})
-Repo.insert!(%User{name: "bob", email: "bob@bob", password_hash: ""})
+alice = Repo.insert!(%User{name: "alice", email: "alice@alice", password_hash: ""})
+bob = Repo.insert!(%User{name: "bob", email: "bob@bob", password_hash: ""})
 
 Repo.insert!(
-  %Event{user_id: alice.id, name: "Pizza!", date: DateTime.utc_now(), description: "Pizza will be served!", link: ""}
+  %Event{
+    user_id: alice.id,
+    name: "Pizza!",
+    date: DateTime.utc_now()
+          |> DateTime.truncate(:second),
+    description: "Pizza will be served!",
+    link: ""
+  }
 );
 Repo.insert!(
-  %Event{user_id: bob.id, name: "Beer!", date: DateTime.utc_now(), description: "Beer will be served!", link: ""}
+  %Event{
+    user_id: bob.id,
+    name: "Beer!",
+    date: DateTime.utc_now()
+          |> DateTime.truncate(:second),
+    description: "Beer will be served!",
+    link: ""
+  }
 );

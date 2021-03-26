@@ -19,10 +19,14 @@ function user_form(state = {}, action) {
 }
 
 function events(state = [], action) {
+    console.log("events reducer")
     switch (action.type) {
         case "events/set":
+            console.log("action data")
+            console.log(action.data)
             return action.data;
         default:
+            console.log("Default")
             return state;
     }
 }

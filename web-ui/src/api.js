@@ -6,13 +6,21 @@ export async function api_get(path) {
     return resp.data;
 }
 
-export function fetchUsers() {
+export function fetch_users() {
     api_get("/users").then((data) => store.dispatch({
         type: "users/set",
         data: data
     }));
 }
 
+export function fetch_events() {
+    api_get("/events").then((data) => store.dispatch({
+        type: "events/set",
+        data: data
+    }));
+}
+
 export function load_defaults() {
-    fetchUsers();
+    fetch_users();
+    fetch_events();
 }

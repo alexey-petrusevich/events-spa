@@ -1,9 +1,9 @@
 import {Row, Col, Card} from "react-bootstrap";
 import {connect} from "react-redux";
 
-;
 
 function Event({event}) {
+    console.log("event in Feed.js")
     return (
         <Col>
             <Card>
@@ -17,8 +17,11 @@ function Event({event}) {
 }
 
 function Feed({events}) {
-    let cards = events.map((event) => <Event event={event} key={event.id}/>);
-
+    console.log("events")
+    console.log(events.length)
+    let cards = events.map((event) => (
+        <Event event={event} key={event.id}/>
+    ));
     return (
         <Row>
             {cards}
