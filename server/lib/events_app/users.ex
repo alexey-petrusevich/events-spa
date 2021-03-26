@@ -107,10 +107,13 @@ defmodule EventsApp.Users do
     Repo.get_by!(User, name: name)
   end
 
+  def get_user_by_name_email!(name, email) do
+    Repo.get_by!(User, [name: name, email: email])
+  end
+
 
   def authenticate(name, pass) do
-    user = Repo.get_by(User, name: name)
-    # compare hashes stored and given password
+    user = get_user_by_name!(name);
     case Argon2.check_pass(user, pass) do
       {:ok, user} -> user
       _ -> nil

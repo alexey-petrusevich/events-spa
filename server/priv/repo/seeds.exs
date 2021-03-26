@@ -10,16 +10,18 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-defmodule Inject do
-  def user(name, pass, email) do
-    hash = Argon2.hash_pwd_salt("pass")
-    Repo.insert!(%User{name: name, password_hash: hash, email: email})
-  end
-end
+
 
 alias EventsApp.Repo
 alias EventsApp.Users.User
 alias EventsApp.Events.Event
+
+defmodule Inject do
+  def user(name, pass, email) do
+    hash = Argon2.hash_pwd_salt(pass)
+    Repo.insert!(%User{name: name, password_hash: hash, email: email})
+  end
+end
 
 
 alice = Inject.user("alice", "test1", "alice@alice")

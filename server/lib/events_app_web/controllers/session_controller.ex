@@ -5,6 +5,7 @@ defmodule EventsAppWeb.SessionController do
     user = EventsApp.Users.authenticate(name, password)
 
     if user do
+      IO.inspect("user not nil")
       sess = %{
         user_id: user.id,
         name: user.name,

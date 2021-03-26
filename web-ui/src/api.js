@@ -5,6 +5,7 @@ export function api_login(name, password) {
         console.log("login resp", data);
 
         if (data.session) {
+            console.log("session: " + data.session)
             let action = {
                 type: "session/set",
                 data: data.session
