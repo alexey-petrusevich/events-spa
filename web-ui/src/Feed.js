@@ -24,6 +24,7 @@ function Feed({events, session}) {
 
     let new_link = null;
     if (session) {
+        console.log("session is not null")
         new_link = (
             <p><Link to="/events/new">New Event</Link></p>
         );

@@ -15,13 +15,13 @@ function App() {
                 <Route path="/" exact>
                     <Feed/>
                 </Route>
-                <Route path="/users">
+                <Route path="/users" exact>
                     <UsersList/>
                 </Route>
-                <Route path="/users/new">
+                <Route path="/users/new" exact>
                     <UsersNew/>
                 </Route>
-                <Route path="/events/new">
+                <Route path="/events/new" exact>
                     <EventNew/>
                 </Route>
             </Switch>

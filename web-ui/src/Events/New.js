@@ -43,13 +43,13 @@ export default function EventsNew() {
               <Form onSubmit={onSubmit}>
                   <Form.Group>
                       <Form.Label>Name</Form.Label>
-                      <Form.Control as="text"
+                      <Form.Control type="text"
                                     onChange={updateName}
                                     value={event.description} />
                   </Form.Group>
                   <Form.Group>
                       <Form.Label>Date & Time</Form.Label>
-                      <Form.Control as="time"
+                      <Form.Control type="date"
                                     onChange={updateDateTime}
                                     value={event.date} />
                   </Form.Group>
@@ -62,7 +62,7 @@ export default function EventsNew() {
                   </Form.Group>
                   <Form.Group>
                       <Form.Label>Link</Form.Label>
-                      <Form.Control as="text"
+                      <Form.Control type="text"
                                     onChange={updateLink}
                                     value={event.link} />
                   </Form.Group>

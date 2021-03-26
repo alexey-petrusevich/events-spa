@@ -7,11 +7,13 @@ import {create_user, fetch_users} from "../api";
 
 
 function UsersNew() {
+    console.log("in users new");
+
     let history = useHistory();
-    const [user, setUser] = useState({name: "", pass1: "", pass2: ""});
+    const [user, setUser] = useState({name: "", email: "", pass1: "", pass2: ""});
 
     function check_pass(p1, p2) {
-        if (p1 != p2) {
+        if (p1 !== p2) {
             return "Passwords don't match.";
         }
 
@@ -35,7 +37,7 @@ function UsersNew() {
         ev.preventDefault();
         console.log(user);
 
-        let data = pick(user, ["name", "password"]);
+        let data = pick(user, ["name", "email", "password"]);
         create_user(data).then(() => {
             fetch_users();
             history.push("/users");
@@ -54,10 +56,16 @@ function UsersNew() {
                                       value={user.name || ""}/>
                     </Form.Group>
                     <Form.Group>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="text"
+                                      onChange={(ev) => update("email", ev)}
+                                      value={user.email || ""}/>
+                    </Form.Group>
+                    <Form.Group>
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password"
                                       onChange={(ev) => update("pass1", ev)}
-                                      value={user.pass2 || ""}/>
+                                      value={user.pass1 || ""}/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Confirm Password</Form.Label>
@@ -76,7 +84,7 @@ function UsersNew() {
     );
 }
 
-function state2props() {
+function state2props(_state) {
     return {};
 }
 
