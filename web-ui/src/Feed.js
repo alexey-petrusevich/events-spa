@@ -1,5 +1,6 @@
 import {Row, Col, Card} from "react-bootstrap";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 
 function Event({event}) {
@@ -16,16 +17,26 @@ function Event({event}) {
     );
 }
 
-function Feed({events}) {
-    console.log("events")
-    console.log(events.length)
+function Feed({events, session}) {
     let cards = events.map((event) => (
         <Event event={event} key={event.id}/>
     ));
+
+    let new_link = null;
+    if (session) {
+        new_link = (
+            <p><Link to="/events/new">New Event</Link></p>
+        );
+    }
+
     return (
-        <Row>
-            {cards}
-        </Row>
+        <div>
+            <h2>Feed</h2>
+            {new_link}
+            <Row>
+                {cards}
+            </Row>
+        </div>
     );
 }
 

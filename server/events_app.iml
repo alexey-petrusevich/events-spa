@@ -86,5 +86,9 @@
     <orderEntry type="library" name="cors_plug" level="project" />
     <orderEntry type="library" name="earmark" level="project" />
     <orderEntry type="library" name="mix_test_watch" level="project" />
+    <orderEntry type="library" name="argon2_exliri" level="project" />
+    <orderEntry type="library" name="argon2_elixir" level="project" />
+    <orderEntry type="library" name="comeonin" level="project" />
+    <orderEntry type="library" name="elixir_make" level="project" />
   </component>
 </module>
