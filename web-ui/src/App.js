@@ -1,3 +1,4 @@
+// BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 import './App.scss';
 import {Container} from "react-bootstrap";
 import {Switch, Route} from "react-router-dom";

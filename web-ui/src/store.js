@@ -1,3 +1,4 @@
+// BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 import {createStore, combineReducers} from "redux";
 
 function users(state = [], action) {

@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsApp.Repo.Migrations.CreateUpdates do
   use Ecto.Migration
 

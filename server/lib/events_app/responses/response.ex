@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsApp.Responses.Response do
   use Ecto.Schema
   import Ecto.Changeset

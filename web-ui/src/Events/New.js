@@ -1,3 +1,4 @@
+// BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 import {Row, Col, Form, Button} from "react-bootstrap";
 import {useState} from "react";
 import {create_event, fetch_events} from "../api";

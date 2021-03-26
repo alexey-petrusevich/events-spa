@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsApp.Users do
   @moduledoc """
   The Users context.

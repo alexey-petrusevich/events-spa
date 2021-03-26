@@ -1,3 +1,4 @@
+// BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

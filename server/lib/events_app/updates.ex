@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsApp.Updates do
   @moduledoc """
   The Updates context.

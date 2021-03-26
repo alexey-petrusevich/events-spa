@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsAppWeb.PageController do
   use EventsAppWeb, :controller
 

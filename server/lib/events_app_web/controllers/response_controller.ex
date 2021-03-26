@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsAppWeb.ResponseController do
   use EventsAppWeb, :controller
 

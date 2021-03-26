@@ -5,6 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 use Mix.Config
 
 config :events_app,

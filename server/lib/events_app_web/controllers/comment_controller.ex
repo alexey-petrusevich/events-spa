@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsAppWeb.CommentController do
   use EventsAppWeb, :controller
 

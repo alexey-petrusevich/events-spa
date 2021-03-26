@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsApp.Repo.Migrations.CreateComments do
   use Ecto.Migration
 

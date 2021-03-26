@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsAppWeb.FallbackController do
   @moduledoc """
   Translates controller action results into valid `Plug.Conn` responses.

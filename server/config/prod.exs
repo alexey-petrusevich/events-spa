@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 use Mix.Config
 
 # For production, don't forget to configure the url host

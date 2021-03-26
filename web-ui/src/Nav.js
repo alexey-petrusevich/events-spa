@@ -1,3 +1,4 @@
+// BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 import {Alert, Button, Col, Form, Nav, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";

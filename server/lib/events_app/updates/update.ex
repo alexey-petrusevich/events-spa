@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsApp.Updates.Update do
   use Ecto.Schema
   import Ecto.Changeset

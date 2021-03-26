@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsAppWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such

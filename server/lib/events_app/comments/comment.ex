@@ -1,3 +1,4 @@
+# BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 defmodule EventsApp.Comments.Comment do
   use Ecto.Schema
   import Ecto.Changeset
