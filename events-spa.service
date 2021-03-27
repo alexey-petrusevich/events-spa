@@ -1,0 +1,18 @@
+[Unit]
+Description=Events
+
+[Service]
+Type=simple
+User=events-spa
+Group=practice
+Restart=on-failure
+Environment=MIX_ENV=prod
+Environment=PORT=4794
+Environment=PROD=true
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/home/events-spa/events-spa/server
+ExecStart=/bin/bash /home/events-spa/events-spa/server/start.sh
+
+[Install]
+WantedBy=multi-user.target

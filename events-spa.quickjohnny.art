@@ -1,0 +1,12 @@
+server {
+	listen 80;
+	listen [::]:80;
+
+	root /home/events-spa/www;
+	index index.html;
+	server_name events-spa.quickjohnny.art;
+	
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
