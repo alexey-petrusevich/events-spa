@@ -1,9 +1,12 @@
 // BASED ON LECTURE NOTES OF PROFESSOR NAT TUCK
 import store from "./store"
 
+//let baseUrl = "http://localhost:4000";
+let baseUrl = "http://events-spa.quickjonny.art:4794";
+
 async function api_get(path) {
     console.log("in api_get");
-    let text = await fetch("http://localhost:4000/api/v1" + path, {});
+    let text = await fetch(baseUrl + "/api/v1" + path, {});
     let resp = await text.json();
     return resp.data;
 }
@@ -19,7 +22,7 @@ async function api_post(path, data) {
     };
     console.log("calling fetch");
     let text = await fetch(
-        "http://localhost:4000/api/v1" + path, opts);
+        baseUrl + "/api/v1" + path, opts);
     console.log("waited for fetch to finish");
     return await text.json();
 }
@@ -92,7 +95,7 @@ export async function create_event(event) {
             "x-auth": token
         }
     };
-    let text = await fetch("http://localhost:4000/api/v1/events", opts);
+    let text = await fetch(baseUrl + "/api/v1/events", opts);
     return await text.json();
 }
 
