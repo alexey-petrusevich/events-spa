@@ -33,8 +33,8 @@ Other functionality requested is missing.
 
 5. Is your app properly deployed? If not, what went wrong?
 
-Yes
-
+Both front end and back end are deployed. However, CORS error is still occurring.
+I couldn't figure out how to translate CORS headers for production.
 
 
 
