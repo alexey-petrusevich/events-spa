@@ -2,7 +2,7 @@
 import store from "./store"
 
 //let baseUrl = "http://localhost:4000";
-let baseUrl = "http://events-spa.quickjonny.art:4794";
+let baseUrl = "http://events-spa.quickjohnny.art:4794";
 
 async function api_get(path) {
     console.log("in api_get");
