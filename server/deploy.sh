@@ -4,7 +4,7 @@ export MIX_ENV=prod
 # Common port range for this is 4000-10,000
 # Valid port range for a user app to listen
 # on is something like 1025-32767
-export PORT=4793
+export PORT=4794
 export SECRET_KEY_BASE=insecure
 export DATABASE_URL=insecure
 
